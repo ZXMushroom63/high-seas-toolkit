@@ -11,7 +11,7 @@ async function main() {
 
     const bookmarklet = "javascript:" + encodeURIComponent(minified);
 
-    await fs.writeFile("dist/bookmarklet.html", `
+    const installer = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +23,9 @@ async function main() {
     <p>To install the bookmarklet, drag the emoji below into your bookmarks bar.</p>
     <a href="${bookmarklet}">⚓</a>
 </body>
-</html>`)
+</html>`;
+
+    await fs.writeFile("dist/bookmarklet.html", installer);
+    await fs.writeFile("./index.html", installer);
 }
 main()
