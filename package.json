@@ -1,0 +1,14 @@
+{
+  "name": "high-seas-toolkit",
+  "version": "1.0.0",
+  "description": "A toolkit to view and edit internal client-side high seas data.",
+  "scripts": {
+    "package": "node package.js"
+  },
+  "author": "ZXMushroom63",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-minify": "^0.5.2"
+  }
+}
