@@ -27,6 +27,7 @@ async function main() {
 </html>`;
 
     await fs.writeFile("dist/bookmarklet.html", installer);
+    await fs.writeFile("dist/highseastoolkit.min.js", minified);
     await fs.writeFile("./index.html", installer);
 }
 main()
