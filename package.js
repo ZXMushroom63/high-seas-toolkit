@@ -20,6 +20,7 @@ async function main() {
     <title>High Seas Toolkit Bookmarklet Installer</title>
 </head>
 <body>
+    <h1>⚓ High Seas Toolkit</h1>
     <p>To install the bookmarklet, drag the emoji below into your bookmarks bar.</p>
     <a href="${bookmarklet}">⚓</a>
 </body>
