@@ -49,6 +49,10 @@
             <label>OtherCountries: </label>
             <code>false</code>
         </div>
+        <div class="enabledAll">
+            <label>AllCountries: </label>
+            <code>false</code>
+        </div>
         <div class="fulfilledAtEnd">
             <label>One Time Purchase: </label>
             <code>false</code>
@@ -99,14 +103,18 @@
     function displayToUI(data) {
         var keys = Object.keys(data);
         keys.forEach(k => {
-            sidePanel.getElementsByClassName(k)[0].querySelector("code").innerText = data[k];
+            try {
+                sidePanel.getElementsByClassName(k)[0].querySelector("code").innerText = data[k];
+            } catch(e) {
+                console.log("High Seas Toolkit found a new property: " + k);
+            }
         });
         sidePanel.style.display = "block";
     }
     function extractReactState($reactElem) {
         var reactKey = Object.keys($reactElem).find(x=>x.startsWith("__reactProps$"));
         var props = $reactElem[reactKey].children.props;
-        return props.children[2].props.children.props.item;
+        return props.children[2].props.children[0].props.item;
     }
     function updateShopCards() {
         const shopCards = document.querySelectorAll(`#harbor-tab-scroll-element div.container>div.grid>div`);
